@@ -14,7 +14,21 @@
 		"crons": [
 			"* * * * *"
 		]
-	}
+	},
+	/**
+	 * Secrets (set via `wrangler secret put`):
+	 * - SWITCHBOT_TOKEN
+	 * - SWITCHBOT_SECRET
+	 * - LINE_CHANNEL_ACCESS_TOKEN
+	 * - LINE_USER_ID
+	 */
+	"kv_namespaces": [
+		{
+			"binding": "CO2_ALERT_STATE",
+			"id": "d1eda1ffd65b4c3985ace0ec4167d70e",
+			"preview_id": "eb1abb2a69394218a423ed6b0982ebcb"
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
