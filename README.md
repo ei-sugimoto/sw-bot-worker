@@ -7,7 +7,7 @@ Cloudflare Workerを使用して、SwitchBot CO2センサー（MeterPro CO2）�
 - 毎分SwitchBot APIからCO2センサーのデータを取得
 - CO2濃度、温度、湿度をログに記録
 - CO2センサーのデバイスIDを自動検出
-- **CO2濃度が2000ppm以上になるとLINE Messaging APIで通知**
+- **CO2濃度が3000ppm以上になるとLINE Messaging APIで通知**
 - 値が閾値以下に戻るまで再通知を防止（KVで状態管理）
 
 ## セットアップ
@@ -146,7 +146,7 @@ npx wrangler tail
 CO2データ取得
     |
     v
-CO2 >= 2000ppm?
+CO2 >= 3000ppm?
   |
   +-- YES & 未通知 --> LINE通知送信 --> KVに状態保存
   |
@@ -190,7 +190,7 @@ cron式の例：
 `src/index.ts`の`CO2_THRESHOLD`定数を変更：
 
 ```typescript
-const CO2_THRESHOLD = 2000;  // ppm
+const CO2_THRESHOLD = 3000;  // ppm
 ```
 
 ## API参照

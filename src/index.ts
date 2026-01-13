@@ -19,7 +19,7 @@
 /**
  * CO2 threshold for alerts (ppm)
  */
-const CO2_THRESHOLD = 2000;
+const CO2_THRESHOLD = 3000;
 
 /**
  * KV key for tracking alert state
